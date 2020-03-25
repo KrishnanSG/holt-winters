@@ -39,7 +39,7 @@ class TimeSeries:
         no_of_rows_in_dataset = self.data.shape[0]
         split_index = int(no_of_rows_in_dataset*train_size)
         self.train = self.data.iloc[:split_index,1]
-        self.test = self.data.iloc[split_index:,1]
+        self.test = self.data.iloc[split_index-1:,1]
 
     def set_scale(self,factor=1):
         """Scales values in the time series"""
