@@ -74,5 +74,48 @@ The following graph illustrates how holt's model is used to forecast time series
 - This property of LR isn't suitable for time series data, hence holt's is perfered over LR for time series analysis as the model uses the exponential smoothing.
 
 
+## Holt-Winter Model
+
+Holt-Winter model is an extension of Holt's model. This take into account of all the 3 time series components (level, trend and seasonality). The seasonality component of time series is an important component, since most real world data have a seasonal period. 
+
+### Additive Model
+Holt-Winter additive model is preferred when the time series shows constant or roughly contst seasonality over time.
+
+#### Formula
+
+![](https://latex.codecogs.com/svg.latex?F_t%20%3D%20a_t_-_1%20&plus;%20b_t_-_1%20&plus;%20c_t_-_p%20%5C%5C%20a_t%20%3D%20%5Calpha%20%28D_t-c_t_-_p%29&plus;%281-%5Calpha%20%29%28a_t_-_1&plus;b_t_-_1%29%5C%5C%20b_t%20%3D%20%5Cbeta%20%28a_t-a_t_-_1%29%20&plus;%20%281-%5Cbeta%20%29b_t_-_1%20%5C%5C%20c_t%20%3D%20%5Cgamma%20%28D_t-a_t%29%20&plus;%20%281-%5Cgamma%20%29c_t_-_p)
+
+- **F** - the forecast at time **t**.
+- **D** - the actual value at time **t**.
+- **a** - level at time **t**.
+- **b** - trend/slope component at time **t**.
+- **c** - seasonal component at time **t**.
+- **α** - smoothing parameter for level.
+- **β** - smoothing parameter for trend.
+- **γ** - smoothing parameter for seasonality.
+- **p** - period for the time series.
+
+
+The following graph illustrates how Holt-Winter additive model is used to predict seasonal data having a constant seasonality of period=12 or 1 year.
+
+![](https://www.vividcortex.com/hubfs/Blog/triple_exponential_smoothing.png)
+
+[Image Source](https://www.vividcortex.com/blog/exponential-smoothing-for-time-series-forecasting)
+
+### Multiplicative Model
+Holt-Winter multiplicative is useful in cases when the time series has the seasonality component changing over time.
+
+#### Formula
+
+![](https://latex.codecogs.com/svg.latex?%5Cdpi%7B120%7D%20F_%7Bt&plus;1%7D%20%3D%20%28a_%7Bt%7D%20&plus;%20b_%7Bt%7D%29c_%7Bt&plus;1%7D%20%5C%5C%20%5C%5C%20a_%7Bt%7D%20%3D%20%5Calpha%20%5Cfrac%7BD_%7Bt%7D%7D%7Bc_%7Bt-m%7D%7D%20&plus;%20%281%20-%20%5Calpha%29%28a_%7Bt-1%7D%20&plus;%20b_%7Bt-1%7D%29%5C%5C%20%5C%5C%20b_%7Bt%7D%20%3D%20%5Cbeta%28a_%7Bt%7D-a_%7Bt-1%7D%29%20&plus;%20%281%20-%20%5Cbeta%29b_%7Bt-1%7D%5C%5C%20%5C%5C%20c_%7Bt%7D%20%3D%20%5Cgamma%20%5Cfrac%7BD_%7Bt%7D%7D%7B%28a_%7Bt-1%7D%20&plus;%20b_%7Bt-1%7D%29%7D%20&plus;%20%281%20-%20%5Cgamma%29c_%7Bt-m%7D)
+
+The following graph illustrates how the seasonal component changes over time and multiplicative model is used to generate forecasts.
+
+![](https://anomaly.io/wp-content/uploads/2015/12/multiplicative-model.png)
+
+[Image Source](https://anomaly.io/seasonal-trend-decomposition-in-r/index.html)
+
+
+
 # Author
 **Krishnan S G** 
