@@ -1,7 +1,38 @@
 # Holt-Winters Forecasting 
 
 # Table of Contents
-[TOC]
+- [Holt-Winters Forecasting](#holt-winters-forecasting)
+- [Table of Contents](#table-of-contents)
+- [Introduction](#introduction)
+- [Mathematical Overview](#mathematical-overview)
+  - [Time Series](#time-series)
+    - [Aspects of Time Series](#aspects-of-time-series)
+  - [Exponential Smoothing](#exponential-smoothing)
+    - [Why exponential smoothing?](#why-exponential-smoothing)
+    - [Formula](#formula)
+  - [Holt's Model](#holts-model)
+    - [Drawbacks of SES](#drawbacks-of-ses)
+    - [What is Holt's Model?](#what-is-holts-model)
+    - [Formula](#formula-1)
+    - [Comparison with Linear Regression](#comparison-with-linear-regression)
+  - [Holt-Winter Model](#holt-winter-model)
+    - [Additive Model](#additive-model)
+      - [Formula](#formula-2)
+    - [Multiplicative Model](#multiplicative-model)
+      - [Formula](#formula-3)
+  - [Anomaly Detection using Brutlag algorithm](#anomaly-detection-using-brutlag-algorithm)
+    - [What is Brutlag algorithm?](#what-is-brutlag-algorithm)
+    - [Formula](#formula-4)
+  - [References](#references)
+    - [Textbooks](#textbooks)
+    - [Other](#other)
+- [Getting Started](#getting-started)
+  - [Installation guide](#installation-guide)
+  - [Jupyter Notebook](#jupyter-notebook)
+  - [Python Script](#python-script)
+    - [Generating the analysis](#generating-the-analysis)
+  - [Anomaly Detection](#anomaly-detection)
+- [Author](#author)
 
 # Introduction
 Holt-Winters forecasting is a way to model and predict the behavior of a sequence of values over time—a time series.
