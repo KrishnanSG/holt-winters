@@ -21,9 +21,12 @@ from matplotlib import dates as mpld
 # Seasonal Decompose
 from statsmodels.tsa.seasonal import seasonal_decompose
 
+# Holt-Winters or Triple Expoenntial Smoothing model
+from statsmodels.tsa.holtwinters import ExponentialSmoothing
+
 register_matplotlib_converters()
 
-ts = TimeSeries('dataset/monthly_sales.csv', train_size=0.7)
+ts = TimeSeries('dataset/monthly_sales.csv', train_size=0.8)
 
 print("Sales Data\n")
 print(ts.data.describe())
@@ -77,3 +80,22 @@ Model Selection
 From the above observation we can evidently conclude that **Holt-Winter additive model** would be an 
 appropriate choice as there is a constant seasonality component along with an increasing trend.
 """
+# Scaling down the data by a factor of 1000
+ts.set_scale(1000)
+
+# Training the model
+model = ExponentialSmoothing(ts.train,trend='additive',seasonal='additive',seasonal_periods=12).fit()
+plt.plot(ts.train.index,ts.train,label="Train")
+plt.plot(ts.test.index,ts.test,label="Actual")
+
+# Create a 5 year forecast
+plt.plot(model.forecast(60),label="Forecast")
+
+plt.legend(['Train','Actual','Forecast'])
+plt.gcf().autofmt_xdate()
+date_format = mpld.DateFormatter('%Y-%m')
+plt.gca().xaxis.set_major_formatter(date_format)
+plt.title("Sales Data Analysis (2013-2016)")
+plt.xlabel("Time")
+plt.ylabel("Sales (x1000)")
+plt.show()
