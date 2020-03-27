@@ -21,7 +21,7 @@ from matplotlib import dates as mpld
 # Seasonal Decompose
 from statsmodels.tsa.seasonal import seasonal_decompose
 
-# Holt-Winters or Triple Expoenntial Smoothing model
+# Holt-Winters or Triple Exponential Smoothing model
 from statsmodels.tsa.holtwinters import ExponentialSmoothing
 
 register_matplotlib_converters()

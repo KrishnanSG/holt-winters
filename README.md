@@ -115,6 +115,31 @@ The following graph illustrates how the multiplicative model is used to generate
 
 [Image Source](https://anomaly.io/seasonal-trend-decomposition-in-r/index.html)
 
+## Anomaly Detection using Brutlag algorithm
+
+Anomaly detection problem for time series is usually formulated as finding outlier data points relative to some standard.
+
+
+### What is Brutlag algorithm?
+The algorithm is an extension to Holt-Winter model. The data points within the confidence bands are considered to be normal and data points outside the bands are considered to be anomalies.
+
+### Formula
+![](https://latex.codecogs.com/svg.latex?d_t%20%3D%20%5Cgamma%20%5Cleft%20%7C%20D_t-P_t%20%5Cright%20%7C&plus;%281-%5Cgamma%20%29d_%7Bt-p%7D%5C%5C%20UB%20%3D%20a_%7Bt-1%7D&plus;b_%7Bt-1%7D&plus;c_%7Bt-p%7D%20&plus;%20m*d_%7Bt-p%7D%20%5C%5C%20LB%20%3D%20a_%7Bt-1%7D&plus;b_%7Bt-1%7D&plus;c_%7Bt-p%7D%20-%20m*d_%7Bt-p%7D)
+
+- **UB** - upper confidence band.
+- **LB** - lower confidence band.
+- **a** - level at time **t**.
+- **b** - trend/slope component at time **t**.
+- **c** - seasonal component at time **t**.
+- **γ** - smoothing parameter for seasonality.
+- **p** - period for the time series.
+- **m** - brutlag scaling factor.
+
+
+The following graphs illustrates how Holt-Winter's model and brutlag algorithm are used to identify anomalies present in the time series.
+
+![](plots/brutlag_plot.png)
+
 ## References
 ### Textbooks
 - [**Forecasting: Principles and Practice**, Rob J Hyndman and George Athanasopoulos](https://otexts.com/fpp2/)
@@ -124,7 +149,7 @@ The following graph illustrates how the multiplicative model is used to generate
 - [Exponential smoothing for time series forecasting](https://www.vividcortex.com/blog/exponential-smoothing-for-time-series-forecasting)
 - [statsmodel.tsa.holtwinters module](https://www.statsmodels.org/dev/generated/statsmodels.tsa.holtwinters.ExponentialSmoothing.html)
 - [Stationarity in time series](https://towardsdatascience.com/stationarity-in-time-series-analysis-90c94f27322)
-
+- [Brutlag algorithm](https://annals-csis.org/proceedings/2012/pliks/118.pdf)
 
 # Getting Started
 
@@ -140,7 +165,7 @@ pip install -r requirements.txt
 ## Jupyter Notebook
 The [notebook](analysis.ipynb) contains the sales data analysis along with the following:
 
-- What is seasonal decompose of a time series?
+- What is seasonal decomposotion of a time series?
 - Model selection and validation.
 - Model summary and conclusion.
 
@@ -154,7 +179,16 @@ For those who prefer [python script](analysis.py) over jupyter notebook.
 python analysis.py
 ```
 
-**Note:** The dataset used for the analysis can be found under the [dataset](dataset/) folder.
+## Anomaly Detection
+[anomaly_detection.py](anomaly_detection.py) script contains the implementation of brutlag algorithm to find anomalies in [average temperature of India](dataset/average_temp_india.csv) dataset.
+
+```
+python anomaly_detection.py
+```
+
+[anomaly_detection.ipynb](anomaly_detection.ipynb)  notebook contains a detailed analysis of anomaly detection using Holt-Winter model and brutlag algorithm.
+
+**Note:** The datasets used for the analysis can be found under the [dataset](dataset/) folder.
 
 # Author
 **Krishnan S G** 
