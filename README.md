@@ -45,12 +45,12 @@ The following graph with α=0.5 shows how weights of older data diminish over ti
 Holt's model or Double Exponential Smoothing is an extension to simple exponential smoothing.
 
 ### Drawbacks of SES
-- SES assumes the time series to be [stationary](https://otexts.com/fpp2/stationarity.html),i.e it assume the statistical properties such as the mean, variance and autocorrelation are all constant over time.
-- But in general a majority of time series dataset have either trend or seasonality component, thus forecasts made by SES are unproductive.
+- SES assumes the time series to be [stationary](https://otexts.com/fpp2/stationarity.html),i.e it assumes the statistical properties such as the mean, variance and autocorrelation are all constant over time.
+- But in general, a majority of time series have either trend or seasonality component, thus forecasts made by SES are unproductive.
 
 
 ### What is Holt's Model?
-Holt's model overcomes the drawback of SES by considering both level and trend commponent. The term **double exponential smoothing** was coined because exponential smoothing is performed both on level and trend component.
+Holt's model overcomes the drawback of SES by considering both level and trend component. The term **double exponential smoothing** was coined because exponential smoothing is performed both on level and trend component.
 
 ### Formula
 
@@ -63,23 +63,23 @@ Holt's model overcomes the drawback of SES by considering both level and trend c
 - **α** - smoothing parameter for level.
 - **β** - smoothing parameter for trend.
   
-The following graph illustrates how holt's model is used to forecast time series which have trend component.
+The following graph illustrates how holt's model is used to forecast time series having a trend component.
 
 ![](https://www.vividcortex.com/hubfs/Blog/Double_exponential_smoothing.png)
 
 [Image Source](https://www.vividcortex.com/blog/exponential-smoothing-for-time-series-forecasting)
 
 ### Comparison with Linear Regression
-- Linear Regression is a effective method used to predict data points, but linear regression considers all data with same weightage.
-- This property of LR isn't suitable for time series data, hence holt's is perfered over LR for time series analysis as the model uses the exponential smoothing.
+- Linear Regression is an effective method used to predict data points. The downside is that it considers all data with the same weightage.
+- This property of LR isn't suitable for time series data, hence holt's is preferred over LR for time series analysis as the model uses the exponential smoothing.
 
 
 ## Holt-Winter Model
 
-Holt-Winter model is an extension of Holt's model. This take into account of all the 3 time series components (level, trend and seasonality). The seasonality component of time series is an important component, since most real world data have a seasonal period. 
+Holt-Winter model is an extension of Holt's model. This takes into account all the 3 time-series components (level, trend and seasonality). The seasonality component of time series is an important component since most real-world data have a seasonal period. 
 
 ### Additive Model
-Holt-Winter additive model is preferred when the time series shows constant or roughly contst seasonality over time.
+Holt-Winter additive model is preferred when the time series shows constant or roughly constant seasonality over time.
 
 #### Formula
 
@@ -96,7 +96,7 @@ Holt-Winter additive model is preferred when the time series shows constant or r
 - **p** - period for the time series.
 
 
-The following graph illustrates how Holt-Winter additive model is used to predict seasonal data having a constant seasonality of period=12 or 1 year.
+The following graph illustrates how the Holt-Winter additive model is used to predict seasonal data having a constant seasonality of period=12 or 1 year.
 
 ![](https://www.vividcortex.com/hubfs/Blog/triple_exponential_smoothing.png)
 
@@ -109,13 +109,41 @@ Holt-Winter multiplicative is useful in cases when the time series has the seaso
 
 ![](https://latex.codecogs.com/svg.latex?%5Cdpi%7B120%7D%20F_%7Bt&plus;1%7D%20%3D%20%28a_%7Bt%7D%20&plus;%20b_%7Bt%7D%29c_%7Bt&plus;1%7D%20%5C%5C%20%5C%5C%20a_%7Bt%7D%20%3D%20%5Calpha%20%5Cfrac%7BD_%7Bt%7D%7D%7Bc_%7Bt-m%7D%7D%20&plus;%20%281%20-%20%5Calpha%29%28a_%7Bt-1%7D%20&plus;%20b_%7Bt-1%7D%29%5C%5C%20%5C%5C%20b_%7Bt%7D%20%3D%20%5Cbeta%28a_%7Bt%7D-a_%7Bt-1%7D%29%20&plus;%20%281%20-%20%5Cbeta%29b_%7Bt-1%7D%5C%5C%20%5C%5C%20c_%7Bt%7D%20%3D%20%5Cgamma%20%5Cfrac%7BD_%7Bt%7D%7D%7B%28a_%7Bt-1%7D%20&plus;%20b_%7Bt-1%7D%29%7D%20&plus;%20%281%20-%20%5Cgamma%29c_%7Bt-m%7D)
 
-The following graph illustrates how the seasonal component changes over time and multiplicative model is used to generate forecasts.
+The following graph illustrates how the multiplicative model is used to generate forecasts to predict seasonal data having the seasonal component changes over time.
 
 ![](https://anomaly.io/wp-content/uploads/2015/12/multiplicative-model.png)
 
 [Image Source](https://anomaly.io/seasonal-trend-decomposition-in-r/index.html)
 
 
+# Getting Started
+
+Ok!, that's a lot of theory and math, let's get started with the analysis.
+
+## Installation guide 
+```
+git clone https://KrishnanSG@bitbucket.org/KrishnanSG/holt-winters.git
+cd holt-winters/
+pip install -r requirements.txt
+```
+
+## Jupyter Notebook
+The [notebook](analysis.ipynb) contains the sales data analysis along with the following:
+- What is **seasonal decompose** of a time series?
+- Model selection and validation.
+- Model summary and conclusion.
+
+
+## Python Script
+For those who prefer [python script](analysis.py) over jupyter notebook.
+
+
+### Generating the analysis
+```python
+python analysis.py
+```
+
+**Note:** The dataset used for the analysis can be found under the [dataset](dataset/) folder.
 
 # Author
 **Krishnan S G** 
