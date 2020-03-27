@@ -128,7 +128,7 @@ date_format = mpld.DateFormatter('%Y-%m')
 plt.gca().xaxis.set_major_formatter(date_format)
 plt.title("Sales Data Analysis (2013-2016)")
 plt.xlabel("Time")
-plt.ylabel("Sales (x1000)")
+plt.ylabel("Sales")
 plt.show()
 
 
@@ -146,7 +146,7 @@ date_format = mpld.DateFormatter('%Y-%m')
 plt.gca().xaxis.set_major_formatter(date_format)
 plt.title("Sales Data Analysis (2013-2016)")
 plt.xlabel("Time")
-plt.ylabel("Sales (x1000)")
+plt.ylabel("Sales")
 plt.show()
 
 print(model_add.summary())
