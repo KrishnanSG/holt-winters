@@ -115,6 +115,16 @@ The following graph illustrates how the multiplicative model is used to generate
 
 [Image Source](https://anomaly.io/seasonal-trend-decomposition-in-r/index.html)
 
+## References
+### Textbooks
+- [**Forecasting: Principles and Practice**, Rob J Hyndman and George Athanasopoulos](https://otexts.com/fpp2/)
+- [**Introduction to Time Series and Forecasting**, Peter J. Brockwell and Richard A. Davis](http://home.iitj.ac.in/~parmod/document/introduction%20time%20series.pdf)
+
+### Other
+- [Exponential smoothing for time series forecasting](https://www.vividcortex.com/blog/exponential-smoothing-for-time-series-forecasting)
+- [statsmodel.tsa.holtwinters module](https://www.statsmodels.org/dev/generated/statsmodels.tsa.holtwinters.ExponentialSmoothing.html)
+- [Stationarity in time series](https://towardsdatascience.com/stationarity-in-time-series-analysis-90c94f27322)
+
 
 # Getting Started
 
@@ -129,7 +139,8 @@ pip install -r requirements.txt
 
 ## Jupyter Notebook
 The [notebook](analysis.ipynb) contains the sales data analysis along with the following:
-- What is **seasonal decompose** of a time series?
+
+- What is seasonal decompose of a time series?
 - Model selection and validation.
 - Model summary and conclusion.
 
