@@ -5,9 +5,9 @@ Dataset
 -------
 The given dataset contains monthly total sales of a company for the period 2013-2016.
 
-Ojectives
+Objectives
 ---------
-1. To analyse the sales and understand the performance of the company.
+1. To analyse the sales data and understand the performance of the company.
 2. Find patterns and construct a model to forecast future sales.
 """
 from time_series import TimeSeries
@@ -72,15 +72,16 @@ plt.gca().xaxis.set_major_formatter(date_format)
 plt.show()
 
 """
-Observation from Seasonal Decompose
------------------------------------
-1. The time series seems to roughly have a constant seasonality but has an overall **increasing trend**
-2. The slight descreasing trend is observed till 2014-07 after that an increasing trend is observed.
+Observations from Seasonal Decompose
+------------------------------------
+1. The time series seems to roughly have a constant seasonality but has an overall **increasing trend**.
+2. A slightly decreasing trend is observed till 2014-07 after that an increasing trend is observed.
 
 Model Selection
 ---------------
-From the above observation we can evidently conclude that **Holt-Winter additive model** would be an 
-appropriate choice as there is a constant seasonality component along with an increasing trend.
+From the above observations we can evidently conclude that **Holt-Winter additive model** would 
+be an appropriate choice as there is a constant seasonality component along with an increasing trend.
+
 """
 # Scaling down the data by a factor of 1000
 ts.set_scale(1000)
@@ -107,7 +108,7 @@ plt.show()
 """
 Validation of the model
 -----------------------
-Lets do a brief comparison between additive and multiplicative model
+Let's do a brief comparison between the additive and the multiplicative models.
 """
 
 ts = TimeSeries('dataset/monthly_sales.csv', train_size=0.8)
@@ -155,13 +156,13 @@ print(model_mul.summary())
 """
 Conclusion of the analysis
 --------------------------
-From the model summary obtained its clear that sum of squared errors (SSE) for 
-additive (5088109579.122) < SSE for multiplicative(5235252441.242).
+From the model summary obtained it is clear that the sum of squared errors (SSE) for 
+the additive model (5088109579.122) < the SSE for the multiplicative(5235252441.242) model.
 
-Hence the initial assumption that seasonality is roughly constant and therefore 
-choosing additive model was appropriate.
+Hence the initial assumption that seasonality is roughly constant and therefore choosing 
+additive model was appropriate.
 
-Note: The forecast made using multiplicative model seems to be unrealistic since 
-the variance between the high and low on an average is 100000 which is somewhat 
-unexpected in real world sales compared to 63000 incase of additive model.
+Note: The forecast made using multiplicative model seems to be unrealistic since the
+variance between the high and low on an average is 100000 which is somewhat unexpected in 
+real world sales compared to 63000 incase of additive model.
 """
