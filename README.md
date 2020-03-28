@@ -188,7 +188,7 @@ Ok!, that's a lot of theory and math, let's get started with the analysis.
 
 ## Installation guide 
 ```
-git clone https://KrishnanSG@bitbucket.org/KrishnanSG/holt-winters.git
+git clone https://github.com/KrishnanSG/holt-winters.git
 cd holt-winters/
 pip install -r requirements.txt
 ```
@@ -196,7 +196,7 @@ pip install -r requirements.txt
 ## Jupyter Notebook
 The [notebook](analysis.ipynb) contains the sales data analysis along with the following:
 
-- What is seasonal decomposotion of a time series?
+- What is seasonal decomposition of a time series?
 - Model selection and validation.
 - Model summary and conclusion.
 
