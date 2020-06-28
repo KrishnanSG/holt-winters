@@ -67,9 +67,9 @@ If you have some time series xt, you can define a new time series st that is a s
 
 The following graph with α=0.5 shows how weights of older data diminish over time. The black bars denote the actual value(xt) and colored bars denote the smoothened value(st).
 
-![](https://www.vividcortex.com/hubfs/Blog/Exponentially_Weighted_Moving_4.png)
+![](https://orangematter.solarwinds.com/wp-content/uploads/2020/03/Exponentially_Weighted_Moving_4.png)
 
-[Image Source](https://www.vividcortex.com/blog/2014/11/25/how-exponentially-weighted-moving-averages-work/)
+[Image Source](https://orangematter.solarwinds.com/2014/11/25/how-exponentially-weighted-moving-averages-work/)
 
 ## Holt's Model
 
@@ -96,9 +96,9 @@ Holt's model overcomes the drawback of SES by considering both level and trend c
   
 The following graph illustrates how holt's model is used to forecast time series having a trend component.
 
-![](https://www.vividcortex.com/hubfs/Blog/Double_exponential_smoothing.png)
+![](https://orangematter.solarwinds.com/wp-content/uploads/2020/03/Double_exponential_smoothing.png)
 
-[Image Source](https://www.vividcortex.com/blog/exponential-smoothing-for-time-series-forecasting)
+[Image Source](https://orangematter.solarwinds.com/2017/06/22/exponential-smoothing-for-time-series-forecasting/)
 
 ### Comparison with Linear Regression
 - Linear Regression is an effective method used to predict data points. The downside is that it considers all data with the same weightage.
@@ -129,9 +129,9 @@ Holt-Winter additive model is preferred when the time series shows constant or r
 
 The following graph illustrates how the Holt-Winter additive model is used to predict seasonal data having a constant seasonality of period=12 or 1 year.
 
-![](https://www.vividcortex.com/hubfs/Blog/triple_exponential_smoothing.png)
+![](https://orangematter.solarwinds.com/wp-content/uploads/2020/03/triple_exponential_smoothing.png)
 
-[Image Source](https://www.vividcortex.com/blog/exponential-smoothing-for-time-series-forecasting)
+[Image Source](https://orangematter.solarwinds.com/2017/06/22/exponential-smoothing-for-time-series-forecasting/)
 
 ### Multiplicative Model
 Holt-Winter multiplicative is useful in cases when the time series has the seasonality component changing over time.
@@ -177,7 +177,7 @@ The following graphs illustrates how Holt-Winter's model and brutlag algorithm a
 - [**Introduction to Time Series and Forecasting**, Peter J. Brockwell and Richard A. Davis](http://home.iitj.ac.in/~parmod/document/introduction%20time%20series.pdf)
 
 ### Other
-- [Exponential smoothing for time series forecasting](https://www.vividcortex.com/blog/exponential-smoothing-for-time-series-forecasting)
+- [Exponential smoothing for time series forecasting](https://orangematter.solarwinds.com/2017/06/22/exponential-smoothing-for-time-series-forecasting/)
 - [statsmodel.tsa.holtwinters module](https://www.statsmodels.org/dev/generated/statsmodels.tsa.holtwinters.ExponentialSmoothing.html)
 - [Stationarity in time series](https://towardsdatascience.com/stationarity-in-time-series-analysis-90c94f27322)
 - [Brutlag algorithm](https://annals-csis.org/proceedings/2012/pliks/118.pdf)
