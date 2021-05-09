@@ -1,42 +1,9 @@
 # Holt-Winters Forecasting 
 
-# Table of Contents
-- [Holt-Winters Forecasting](#holt-winters-forecasting)
-- [Table of Contents](#table-of-contents)
-- [Introduction](#introduction)
-- [Mathematical Overview](#mathematical-overview)
-  - [Time Series](#time-series)
-    - [Aspects of Time Series](#aspects-of-time-series)
-  - [Exponential Smoothing](#exponential-smoothing)
-    - [Why exponential smoothing?](#why-exponential-smoothing)
-    - [Formula](#formula)
-  - [Holt's Model](#holts-model)
-    - [Drawbacks of SES](#drawbacks-of-ses)
-    - [What is Holt's Model?](#what-is-holts-model)
-    - [Formula](#formula-1)
-    - [Comparison with Linear Regression](#comparison-with-linear-regression)
-  - [Holt-Winter Model](#holt-winter-model)
-    - [Additive Model](#additive-model)
-      - [Formula](#formula-2)
-    - [Multiplicative Model](#multiplicative-model)
-      - [Formula](#formula-3)
-  - [Anomaly Detection using Brutlag algorithm](#anomaly-detection-using-brutlag-algorithm)
-    - [What is Brutlag algorithm?](#what-is-brutlag-algorithm)
-    - [Formula](#formula-4)
-  - [References](#references)
-    - [Textbooks](#textbooks)
-    - [Other](#other)
-- [Getting Started](#getting-started)
-  - [Installation guide](#installation-guide)
-  - [Jupyter Notebook](#jupyter-notebook)
-  - [Python Script](#python-script)
-    - [Generating the analysis](#generating-the-analysis)
-  - [Anomaly Detection](#anomaly-detection)
-- [Author](#author)
-
 # Introduction
 Holt-Winters forecasting is a way to model and predict the behavior of a sequence of values over time—a time series.
 
+⚡ I have created a new python library which makes TSA easier and faster, do check it out @ **[Pytsal](https://github.com/KrishnanSG/pytsal)**
 
 # Mathematical Overview
 Before getting into the analysis of the real-time series model let's understand a few basic concepts required to have a deeper understanding of the topic.
@@ -177,6 +144,8 @@ The following graphs illustrates how Holt-Winter's model and brutlag algorithm a
 - [**Introduction to Time Series and Forecasting**, Peter J. Brockwell and Richard A. Davis](http://home.iitj.ac.in/~parmod/document/introduction%20time%20series.pdf)
 
 ### Other
+- [Pytsal Forecasting](https://github.com/KrishnanSG/pytsal/blob/master/examples/101_forecasting.ipynb)
+- [Pytsal Anomaly detection](https://github.com/KrishnanSG/pytsal/blob/master/examples/101_anomaly_detection.ipynb)
 - [Exponential smoothing for time series forecasting](https://orangematter.solarwinds.com/2017/06/22/exponential-smoothing-for-time-series-forecasting/)
 - [statsmodel.tsa.holtwinters module](https://www.statsmodels.org/dev/generated/statsmodels.tsa.holtwinters.ExponentialSmoothing.html)
 - [Stationarity in time series](https://towardsdatascience.com/stationarity-in-time-series-analysis-90c94f27322)
